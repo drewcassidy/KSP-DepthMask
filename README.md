@@ -9,6 +9,9 @@ This plugin allows for parts to have hollow insets that dont clip into other par
 4. Add the name of your mask object in the `maskTransform` property
 5. (Optional) Add the name of the object you want to restrict the mask effect to in the `bodyTransform` property
 
+##### Creating the depth mask model
+The depth mask will prevent any other parts from rendering behind it. Because of that, it should not be used on any kind of bay where other parts will be placed, or on any part you can look completely through. It also should "bubble" out above the hole you want to cover, otherwise it would be possible to see through it from the side. Also double check your normal direction, since the depth shader only works one way.
+
 ##### An example config:
 ```
   MODULE
@@ -25,7 +28,9 @@ mask meshes and configs for these stock parts will be included in the next major
 <a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-jets.png"  height="300" ></a>
 <a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-intake.png"  height="300" ></a>
 
-<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-box.png"  height="300" ></a>
+<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-panels.png"  height="200" ></a>
+<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-box.png"  height="200" ></a>
+
 ### Licensing
 This plugin is licensed Creative Commons Sharealike Attribution. This means that you can redistribute it and its source code however you like as long as you include attribution and indicate the changes you made, if any. 
 
