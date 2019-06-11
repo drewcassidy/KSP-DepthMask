@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 namespace Restock
 {
-    public class ModuleRestockDepthMask : PartModule
+    public class ModuleDepthMask : PartModule
     {
         // The name of the transform that has your mask mesh. The only strictly required property
         [KSPField] 
