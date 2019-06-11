@@ -32,7 +32,7 @@ mask meshes and configs for these stock parts will be included in the next major
 <a href="Screenshots/depthmask-box.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-box.png"  height="200" ></a>
 
 ### Licensing
-This plugin is licensed Creative Commons Sharealike Attribution. This means that you can redistribute it and its source code however you like as long as you include attribution and indicate the changes you made, if any. 
+This plugin is licensed Creative Commons Sharealike Attribution. This means that you can redistribute it and its source code however you like under the same license as long as you include attribution and indicate the changes you made, if any. 
 
 ### Redistribution
 You are free to redistribute this plugin in your mods, or embed the code in your own plugins (with a different module name for compatability of course.) To prevent duplicates of the plugin, please add the dll to the root gamedata directory. In general, treat this mod the same as [Modulemanager](github.com/sarbian/ModuleManager) for redistribution
