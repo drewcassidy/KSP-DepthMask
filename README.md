@@ -25,11 +25,11 @@ The depth mask will prevent any other parts from rendering behind it. Because of
 ### Screenshots
 mask meshes and configs for these stock parts will be included in the next major update to Restock
 
-<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-jets.png"  height="300" ></a>
-<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-intake.png"  height="300" ></a>
+<a href="raw/master/Screenshots/depthmask-jets.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-jets.png"  height="300" ></a>
+<a href="raw/master/Screenshots/depthmask-intake.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-intake.png"  height="300" ></a>
 
-<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-panels.png"  height="200" ></a>
-<a href="url"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-box.png"  height="200" ></a>
+<a href="raw/master/Screenshots/depthmask-panels.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-panels.png"  height="200" ></a>
+<a href="raw/master/Screenshots/depthmask-box.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-box.png"  height="200" ></a>
 
 ### Licensing
 This plugin is licensed Creative Commons Sharealike Attribution. This means that you can redistribute it and its source code however you like as long as you include attribution and indicate the changes you made, if any. 
