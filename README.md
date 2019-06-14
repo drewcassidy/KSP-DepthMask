@@ -1,13 +1,13 @@
-# ModuleDepthMask
+# ModuleDepthMask v1.1.0
 
 This plugin allows for parts to have hollow insets that dont clip into other parts, ideal for engine nozzles, landing gear, air intakes, solar panel bays, and more. It is a standalone version of the depth mask module included in the [Restock](github.com/PorktoberRevolution/ReStocked) dll, which will be included in the next major Restock update along with the additon of depth masks to several stock parts
 
 ### Usage
-1. Add a depth mask mesh to your part model. It should cover up the hollow area you want to prevent clipping in, without sticking out.
-2. Mark the depth mask object with the `Icon_Hidden` tag to prevent it from showing in the VAB part picker
-3. Add a new `ModuleDepthMask` to your part config
-4. Add the name of your mask object in the `maskTransform` property
-5. (Optional) Add the name of the object you want to restrict the mask effect to in the `bodyTransform` property
+1. Add a depth mask mesh to your part model. It should cover up the hollow area you want to prevent clipping in, without sticking out. You can have multiple mask objects sharing the same name and they will all be used.
+2. Mark the depth mask object with the `Icon_Hidden` tag to prevent it from showing in the VAB part picker.
+3. Add a new `ModuleDepthMask` to your part config.
+4. Add the name of your mask object in the `maskTransform` property.
+5. (Optional) Add the name of the object you want to restrict the mask effect to in the `bodyTransform` property.
 
 ##### Creating the depth mask model
 The depth mask will prevent any other parts from rendering behind it. Because of that, it should not be used on any kind of bay where other parts will be placed, or on any part you can look completely through. It also should "bubble" out above the hole you want to cover, otherwise it would be possible to see through it from the side. Also double check your normal direction, since the depth shader only works one way.
