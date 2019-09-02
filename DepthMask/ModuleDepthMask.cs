@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Restock
+namespace DepthMask
 {
     public class ModuleDepthMask : PartModule
     {
