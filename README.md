@@ -1,6 +1,6 @@
 # ModuleDepthMask v1.1.0
 
-This plugin allows for parts to have hollow insets that dont clip into other parts, ideal for engine nozzles, landing gear, air intakes, solar panel bays, and more. It is a standalone version of the depth mask module included in the [Restock](github.com/PorktoberRevolution/ReStocked) dll, which will be included in the next major Restock update along with the additon of depth masks to several stock parts
+This plugin allows for parts to have hollow insets that dont clip into other parts, ideal for engine nozzles, landing gear, air intakes, solar panel bays, and more. It is a standalone version of the depth mask module included in the [Restock](https://github.com/PorktoberRevolution/ReStocked) dll.
 
 ### Usage
 1. Add a depth mask mesh to your part model. It should cover up the hollow area you want to prevent clipping in, without sticking out. You can have multiple mask objects sharing the same name and they will all be used.
