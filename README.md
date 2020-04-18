@@ -23,7 +23,7 @@ The depth mask will prevent any other parts from rendering behind it. Because of
 ```
 
 ### Screenshots
-mask meshes and configs for these stock parts will be included in the next major update to Restock
+Mask meshes and configs for stock parts are included in [ReStock](https://github.com/PorktoberRevolution/ReStocked)
 
 <a href="Screenshots/depthmask-jets.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-jets.png"  height="300" ></a>
 <a href="Screenshots/depthmask-intake.png"><img src="https://github.com/drewcassidy/KSP-DepthMask/raw/master/Screenshots/depthmask-intake.png"  height="300" ></a>
