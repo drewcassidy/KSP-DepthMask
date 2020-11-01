@@ -1,4 +1,4 @@
-# ModuleDepthMask v1.1.0
+# ModuleDepthMask v1.1.1
 
 This plugin allows for parts to have hollow insets that dont clip into other parts, ideal for engine nozzles, landing gear, air intakes, solar panel bays, and more. It is a standalone version of the depth mask module included in the [Restock](https://github.com/PorktoberRevolution/ReStocked) dll.
 
