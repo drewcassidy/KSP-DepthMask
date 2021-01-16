@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio Version 16
 Project("{3CD2A114-2C93-4D39-95B4-214DCC386A37}") = "DepthMask", "DepthMask\DepthMask.csproj", "{AF7B4795-7A4F-4238-BF1D-F0AC763C15C8}"
 EndProject
 Global
@@ -15,11 +13,5 @@ Global
 		{AF7B4795-7A4F-4238-BF1D-F0AC763C15C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF7B4795-7A4F-4238-BF1D-F0AC763C15C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF7B4795-7A4F-4238-BF1D-F0AC763C15C8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7633F515-D77A-4A4D-998B-4EB65CD3A32C}
 	EndGlobalSection
 EndGlobal
