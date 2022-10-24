@@ -329,3 +329,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 DepthMask/dlls
+DepthMask/Properties/AssemblyInfo.cs
+GameData

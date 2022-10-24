@@ -34,6 +34,7 @@ jobs:
         run: |
           mkdir -p DepthMask/dlls
           mkdir -p GameData
+          mkdir -p GameData/DepthMask
           wget --user drewcassidy --password ${{ secrets.PILE_OF_ROCKS_PASS }} https://pileof.rocks/Secret/KSP-1.12.3-dlls.zip
           unzip KSP-*-dlls.zip -d DepthMask/
 
