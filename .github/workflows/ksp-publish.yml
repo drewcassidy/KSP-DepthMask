@@ -1,0 +1,119 @@
+name: Build and Release
+on:
+  push:
+  pull_request:
+    types:
+      - opened
+      - edited
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install Python Tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r Tools/requirements.txt
+
+      - name: Download Dependencies
+        run: |
+          mkdir -p DepthMask/dlls
+          mkdir -p GameData
+          wget --user drewcassidy --password ${{ secrets.PILE_OF_ROCKS_PASS }} https://pileof.rocks/Secret/KSP-1.12.3-dlls.zip
+          unzip KSP-*-dlls.zip -d DepthMask/
+
+      - name: Generate Version Info
+        run: |
+          python Tools/version.py
+
+      - name: Validate Version Info
+        uses: DasSkelett/AVC-VersionFileValidator@master
+        with: 
+          only: '["./GameData/DepthMask/DepthMask.version"]'
+
+      - name: Build DLL
+        run: |
+          dotnet build --configuration Release DepthMask.sln
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v3
+        with:
+          name: DepthMask
+          path: |
+            GameData/DepthMask
+            README.md 
+            CHANGELOG.md 
+            LICENSE.md
+
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install yaclog
+
+      - name: Setup SSH keys
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.PILE_OF_ROCKS_PRIVATE_KEY }}
+          ssh-host: pileof.rocks
+
+      - name: Get version name and body
+        run: |
+          echo "VERSION_TITLE=$(yaclog show -n)" >> $GITHUB_ENV
+          echo "$(yaclog show -mb)" >> RELEASE.md
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Zip Download Packages
+        run: |
+          mkdir deploy
+
+          zip -r deploy/DepthMask-$GITHUB_REF.zip DepthMask/*
+          cp DepthMask/GameData/DepthMask/DepthMask.version deploy/
+          
+          ls deploy
+
+      - name: Publish to Github
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            deploy/Shabby-*.zip 
+            deploy/DepthMask.version
+          name: DepthMask Version ${{ env.GITHUB_REF }}
+          body_path: RELEASE.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to Server
+        run: |
+          rsync -t deploy/* drewcassidy@pileof.rocks:/var/www/pileof.rocks/html/KSP/
+        

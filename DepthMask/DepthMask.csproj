@@ -5,7 +5,7 @@
     <IsPackable>false</IsPackable>
     <PlatformTarget>x64</PlatformTarget>
     <NoWarn>1701;1702;CS0649;CS1591</NoWarn>
-    <AssemblyVersion>1.1.2</AssemblyVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,7 +36,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cp -v '$(TargetPath)' '$(SolutionDir)/Releases/DepthMask/Gamedata'"/>
+    <MakeDir Directories="$(SolutionDir)/GameData/DepthMask"/>
+    <Copy SourceFiles="$(OutDir)DepthMask.dll" DestinationFolder="$(SolutionDir)/GameData/DepthMask"/>
   </Target>
 
 </Project>

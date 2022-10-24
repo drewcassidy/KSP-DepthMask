@@ -1,0 +1,20 @@
+{
+    "NAME":"DepthMask",
+    "URL":"https://github.com/drewcassidy/KSP-DepthMask/releases/latest/download/DepthMask.version",
+    "DOWNLOAD":"https://github.com/drewcassidy/KSP-DepthMask/releases/latest",
+    "CHANGE_LOG_URL":"https://github.com/drewcassidy/KSP-DepthMask/blob/master/CHANGELOG.md"
+    "VERSION": {
+        "MAJOR": {{ ver_major }},
+        "MINOR": {{ ver_minor }},
+        "PATCH": {{ ver_patch }},
+        "BUILD": {{ ver_build }}
+    },
+    "KSP_VERSION_MIN": {
+        "MAJOR":1,
+        "MINOR":11
+    },
+    "KSP_VERSION_MAX": {
+        "MAJOR":1,
+        "MINOR":12
+    }
+}
