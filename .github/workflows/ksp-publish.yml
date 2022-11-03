@@ -107,12 +107,24 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            deploy/Shabby-*.zip 
+            deploy/DepthMask-*.zip 
             deploy/DepthMask.version
           name: DepthMask Version ${{ env.GITHUB_REF }}
           body_path: RELEASE.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Publish to Spacedock
+        run: |
+          curl -F "username=drewcassidy" -F "password=${{ secrets.SPACEDOCK_PASS }}" \
+            -c ./cookies "https://spacedock.info/api/login"
+          curl -c ./cookies -b ./cookies \
+            -F "version=$VERSION_TITLE" \
+            -F "changelog=$(yaclog show -mb)" \
+            -F "game-version=1.12.4" \
+            -F "notify-followers=yes" \
+            -F "zipball=@deploy/DepthMask-$GITHUB_REF.zip" \
+            "https://spacedock.info/api/mod/2943/update"
 
       - name: Publish to Server
         run: |

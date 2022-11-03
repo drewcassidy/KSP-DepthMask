@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+This version changes the distribution layout! Please make sure DepthMask.dll is deleted before updating.
+
+### Added
+
+- Allowed for multiple body and mask transforms to be specified using a comma seperated list
+
+
 ## 1.1.2 - 2021-01-15 [KSP 1.11]
 
 This version of DepthMask requires KSP 1.11. If you are using KSP 1.10 or older, use v1.1.1
