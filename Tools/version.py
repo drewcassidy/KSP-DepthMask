@@ -14,7 +14,7 @@ def run():
     g = gp.Git(basedir)
 
     release = True
-    tag, distance, sha = g.execute(["git", "describe", "--tags"]).split("-")
+    tag, distance, sha, *_ = g.execute(["git", "describe", "--tags"]).split("-") + [0, 0]
 
     if int(distance) > 0:
         release = False
