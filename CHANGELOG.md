@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.1.3 - 2022-11-04
 
 This version changes the distribution layout! Please make sure DepthMask.dll is deleted before updating.
 
