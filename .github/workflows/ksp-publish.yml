@@ -98,7 +98,7 @@ jobs:
         run: |
           mkdir deploy
 
-          zip -r deploy/DepthMask-$GITHUB_REF.zip DepthMask/*
+          zip -r deploy/DepthMask-$VERSION_TITLE.zip DepthMask/*
           cp DepthMask/GameData/DepthMask/DepthMask.version deploy/
           
           ls deploy
@@ -109,7 +109,7 @@ jobs:
           files: |
             deploy/DepthMask-*.zip 
             deploy/DepthMask.version
-          name: DepthMask Version ${{ env.GITHUB_REF }}
+          name: DepthMask Version ${{ env.VERSION_TITLE }}
           body_path: RELEASE.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -123,7 +123,7 @@ jobs:
             -F "changelog=$(yaclog show -mb)" \
             -F "game-version=1.12.4" \
             -F "notify-followers=yes" \
-            -F "zipball=@deploy/DepthMask-$GITHUB_REF.zip" \
+            -F "zipball=@deploy/DepthMask-$VERSION_TITLE.zip" \
             "https://spacedock.info/api/mod/2943/update"
 
       - name: Publish to Server
