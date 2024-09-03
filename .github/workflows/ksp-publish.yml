@@ -92,7 +92,7 @@ jobs:
           echo "$(yaclog show -mb)" >> RELEASE.md
 
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
 
       - name: Zip Download Packages
         run: |
